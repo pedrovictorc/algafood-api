@@ -2,13 +2,8 @@ package com.algaworks.algafood.domain.exception;
 
 public class PedidoNaoEncontradoException extends EntidadeNaoEncontradaException{
 
-	public PedidoNaoEncontradoException(String mensagem) {
-		super(mensagem);
-		// TODO Auto-generated constructor stub
-	}
-	
-	public PedidoNaoEncontradoException(Long pedidoId) {
-		this(String.format("Não existe cadastro de permissão com o código %d", pedidoId));
+	public PedidoNaoEncontradoException(String codigoPedido) {
+		super(String.format("Não existe cadastro de permissão com o código %s", codigoPedido));
 	}
 
 	/**

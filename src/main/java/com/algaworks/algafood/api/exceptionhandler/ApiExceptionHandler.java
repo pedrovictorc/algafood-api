@@ -110,6 +110,13 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
 	        HttpHeaders headers, HttpStatus status, WebRequest request) {
 	    return handleValidationInternal(ex, ex.getBindingResult(), headers, status, request);
 	}
+	
+	@Override
+	protected ResponseEntity<Object> handleBindException(org.springframework.validation.BindException ex,
+			HttpHeaders headers, HttpStatus status, WebRequest request) {
+		
+		return handleValidationInternal(ex, ex.getBindingResult(), headers, status, request);
+	}
 
 	private ResponseEntity<Object> handleMethodArgumentTypeException(MethodArgumentTypeMismatchException ex,
 			HttpHeaders headers, HttpStatus status, WebRequest request) {

@@ -26,7 +26,7 @@ public class ModelMapperConfig {
 				enderecoSrc -> enderecoSrc.getCidade().getEstado().getNome(),
 				(enderecoModelDest, value) -> enderecoModelDest.getCidade().setEstado(value));
 		
-		return new ModelMapper();
+		return modelMapper;
 	}
 	
 }
